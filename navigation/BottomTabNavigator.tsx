@@ -52,7 +52,7 @@ function TabOneNavigator() {
       <TabOneStack.Screen
         name="RiskListScreen"
         component={RiskListScreen}
-        options={{ headerTitle: 'Tab One Title' }}
+        options={{ headerTitle: 'Risk List' }}
       />
     </TabOneStack.Navigator>
   );

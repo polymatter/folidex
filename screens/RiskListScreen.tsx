@@ -30,9 +30,9 @@ export default function RiskListScreen() {
         })
         }
       </ScrollView>
-      <Button title="Change" onPress={buttonClick} />
+      <Button title="Thing" onPress={buttonClick} />
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/RiskListScreen.tsx" />
+      {/* <EditScreenInfo path="/screens/RiskListScreen.tsx" /> */}
     </View>
   );
 }
