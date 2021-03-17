@@ -3,7 +3,7 @@ import { RiskDetail } from '../types';
 import { StyleSheet } from 'react-native';
 import { Text, View } from '../components/Themed';
 
-const RiskSummary = (risk: RiskDetail & { options: Array<Object> }) => {
+const RiskSummary = ({risk}: {risk: RiskDetail}) => {
 
     return (
         <View style={styles.container}>
