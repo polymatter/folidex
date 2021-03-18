@@ -4,17 +4,13 @@ import { Button, StyleSheet, ScrollView } from 'react-native';
 import EditScreenInfo from '../components/EditScreenInfo';
 import RiskSummary from '../components/RiskSummary';
 import { Text, View } from '../components/Themed';
-import { RiskDetail } from '../types';
+import { BottomTabParamList, RiskDetail } from '../types';
+import { StackNavigationProp } from '@react-navigation/stack';
 
-export default function RiskListScreen() {
-  const [text, setText] = React.useState('Trish');
+export default function RiskListScreen({navigation} : {navigation: StackNavigationProp<BottomTabParamList, 'TabOne'>}) {
 
   const buttonClick = () => {
-    if (text === 'Trish') {
-      setText('Jeffrey');
-    } else {
-      setText('Trish');
-    }
+    navigation.navigate('TabTwo');
   }
 
   const [risks, setRisks] = React.useState([] as RiskDetail[]);
