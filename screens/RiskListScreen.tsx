@@ -7,7 +7,7 @@ import { Text, View } from '../components/Themed';
 import { BottomTabParamList, RiskDetail } from '../types';
 import { StackNavigationProp } from '@react-navigation/stack';
 
-export default function RiskListScreen({navigation} : {navigation: StackNavigationProp<BottomTabParamList, 'TabOne'>}) {
+export default function RiskListScreen({navigation} : {navigation: StackNavigationProp<BottomTabParamList, 'RiskList'>}) {
 
   const buttonClick = () => {
     navigation.navigate('TabTwo');
