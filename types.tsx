@@ -10,6 +10,7 @@ export type BottomTabParamList = {
 
 export type RiskListTabParamList = {
   RiskListScreen: undefined;
+  RiskDetailScreen: { risk: RiskDetail};
 };
 
 export type TabTwoParamList = {

@@ -1,10 +1,11 @@
 import { Ionicons } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createStackNavigator } from '@react-navigation/stack';
+import { CardStyleInterpolators, createStackNavigator } from '@react-navigation/stack';
 import * as React from 'react';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
+import RiskDetailScreen from '../screens/RiskDetailScreen';
 import RiskListScreen from '../screens/RiskListScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
 import { BottomTabParamList, RiskListTabParamList, TabTwoParamList } from '../types';
@@ -48,12 +49,24 @@ const RiskListTabStack = createStackNavigator<RiskListTabParamList>();
 
 function RiskListNavigator() {
   return (
-    <RiskListTabStack.Navigator>
+    <RiskListTabStack.Navigator
+      initialRouteName="RiskListScreen"
+      screenOptions={{
+        cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS
+      }}
+      >
       <RiskListTabStack.Screen
         name="RiskListScreen"
         component={RiskListScreen}
         options={{ headerTitle: 'Risk List' }}
       />
+      <RiskListTabStack.Screen
+        name="RiskDetailScreen"
+        component={RiskDetailScreen}
+        options={({route}) => ({
+          headerTitle: route.params.risk.label
+        })}
+        />
     </RiskListTabStack.Navigator>
   );
 }

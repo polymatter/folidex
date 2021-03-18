@@ -1,16 +1,16 @@
 import * as React from 'react';
-import { Button, StyleSheet, ScrollView } from 'react-native';
+import { Button, StyleSheet, ScrollView, Pressable } from 'react-native';
 
 import EditScreenInfo from '../components/EditScreenInfo';
 import RiskSummary from '../components/RiskSummary';
 import { Text, View } from '../components/Themed';
-import { BottomTabParamList, RiskDetail } from '../types';
+import { BottomTabParamList, RiskDetail, RiskListTabParamList } from '../types';
 import { StackNavigationProp } from '@react-navigation/stack';
 
-export default function RiskListScreen({navigation} : {navigation: StackNavigationProp<BottomTabParamList, 'RiskList'>}) {
+export default function RiskListScreen({navigation} : {navigation: StackNavigationProp<RiskListTabParamList, 'RiskListScreen'>}) {
 
-  const buttonClick = () => {
-    navigation.navigate('TabTwo');
+  const buttonClick = (risk:RiskDetail) => {
+    navigation.navigate('RiskDetailScreen', {risk});
   }
 
   const [risks, setRisks] = React.useState([] as RiskDetail[]);
@@ -22,11 +22,10 @@ export default function RiskListScreen({navigation} : {navigation: StackNavigati
     <View style={styles.container}>
       <ScrollView>
         {risks.map(risk => {
-          return <RiskSummary key={risk.id} risk={risk}></RiskSummary>
+          return <Pressable onPress={() => buttonClick(risk)}><RiskSummary key={risk.id} risk={risk}></RiskSummary></Pressable>
         })
         }
       </ScrollView>
-      <Button title="Thing" onPress={buttonClick} />
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
       {/* <EditScreenInfo path="/screens/RiskListScreen.tsx" /> */}
     </View>
