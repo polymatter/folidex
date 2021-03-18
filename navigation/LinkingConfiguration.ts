@@ -6,9 +6,9 @@ export default {
     screens: {
       Root: {
         screens: {
-          TabOne: {
+          RiskList: {
             screens: {
-              RiskListScreen: 'one',
+              RiskListScreen: 'risklist',
             },
           },
           TabTwo: {

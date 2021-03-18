@@ -16,11 +16,11 @@ export default function BottomTabNavigator() {
 
   return (
     <BottomTab.Navigator
-      initialRouteName="TabOne"
+      initialRouteName="RiskList"
       tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}>
       <BottomTab.Screen
-        name="TabOne"
-        component={TabOneNavigator}
+        name="RiskList"
+        component={RiskListNavigator}
         options={{
           tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
         }}
@@ -44,17 +44,17 @@ function TabBarIcon(props: { name: React.ComponentProps<typeof Ionicons>['name']
 
 // Each tab has its own navigation stack, you can read more about this pattern here:
 // https://reactnavigation.org/docs/tab-based-navigation#a-stack-navigator-for-each-tab
-const TabOneStack = createStackNavigator<RiskListParamList>();
+const RiskListStack = createStackNavigator<RiskListParamList>();
 
-function TabOneNavigator() {
+function RiskListNavigator() {
   return (
-    <TabOneStack.Navigator>
-      <TabOneStack.Screen
+    <RiskListStack.Navigator>
+      <RiskListStack.Screen
         name="RiskListScreen"
         component={RiskListScreen}
         options={{ headerTitle: 'Risk List' }}
       />
-    </TabOneStack.Navigator>
+    </RiskListStack.Navigator>
   );
 }
 
