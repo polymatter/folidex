@@ -8,7 +8,7 @@ export type BottomTabParamList = {
   TabTwo: undefined;
 };
 
-export type RiskListParamList = {
+export type RiskListTabParamList = {
   RiskListScreen: undefined;
 };
 

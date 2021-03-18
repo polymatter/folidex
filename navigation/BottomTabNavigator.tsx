@@ -7,7 +7,7 @@ import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
 import RiskListScreen from '../screens/RiskListScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
-import { BottomTabParamList, RiskListParamList, TabTwoParamList } from '../types';
+import { BottomTabParamList, RiskListTabParamList, TabTwoParamList } from '../types';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 
@@ -44,17 +44,17 @@ function TabBarIcon(props: { name: React.ComponentProps<typeof Ionicons>['name']
 
 // Each tab has its own navigation stack, you can read more about this pattern here:
 // https://reactnavigation.org/docs/tab-based-navigation#a-stack-navigator-for-each-tab
-const RiskListStack = createStackNavigator<RiskListParamList>();
+const RiskListTabStack = createStackNavigator<RiskListTabParamList>();
 
 function RiskListNavigator() {
   return (
-    <RiskListStack.Navigator>
-      <RiskListStack.Screen
+    <RiskListTabStack.Navigator>
+      <RiskListTabStack.Screen
         name="RiskListScreen"
         component={RiskListScreen}
         options={{ headerTitle: 'Risk List' }}
       />
-    </RiskListStack.Navigator>
+    </RiskListTabStack.Navigator>
   );
 }
 
