@@ -18,4 +18,9 @@ export default {
     tabIconDefault: '#ccc',
     tabIconSelected: tintColorDark,
   },
+  badgeLevels: {
+    High: '#dc3545',
+    Medium: '#efa73c',
+    Low: '#29c338'
+  }
 };
