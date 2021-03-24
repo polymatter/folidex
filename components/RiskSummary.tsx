@@ -4,7 +4,8 @@ import { RiskDetail } from '../types';
 import { Text, View } from './Themed';
 import RiskLevelBadge from './RiskLevelBadge';
 
-const RiskSummary = ({ risk }: { risk: RiskDetail }) => {
+// only needs the 'level and 'label' of Risk. Useful in case we want to optimise the risk summary list screen, only fetching information when required.
+const RiskSummary = ({ risk }: { risk: Pick<RiskDetail, 'level' | 'label'> }) => {
 
   return (
     <View style={styles.container}>
