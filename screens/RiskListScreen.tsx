@@ -3,6 +3,7 @@ import { StyleSheet, ScrollView, Pressable } from 'react-native';
 import { StackNavigationProp } from '@react-navigation/stack';
 
 import { RiskDetail, RiskListTabParamList } from '../types';
+import APIEndpoints from '../constants/APIEndpoints';
 import { View } from '../components/Themed';
 import RiskSummary from '../components/RiskSummary';
 
@@ -14,7 +15,7 @@ export default function RiskListScreen({ navigation }: { navigation: StackNaviga
 
   const [risks, setRisks] = React.useState([] as RiskDetail[]);
   React.useEffect(() => {
-    fetch('https://411uchidwl.execute-api.eu-west-2.amazonaws.com/dev/risks').then(d => d.json() as Promise<RiskDetail[]>).then(setRisks);
+    fetch(APIEndpoints.riskDetailList).then(d => d.json() as Promise<RiskDetail[]>).then(setRisks);
   }, [])
 
   return (
