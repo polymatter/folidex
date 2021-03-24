@@ -9,7 +9,7 @@ import RiskSummary from '../components/RiskSummary';
 
 export default function RiskListScreen({ navigation }: { navigation: StackNavigationProp<RiskListTabParamList, 'RiskListScreen'> }) {
 
-  const buttonClick = (risk: RiskDetail) => {
+  const onPressRiskSummary = (risk: RiskDetail) => {
     navigation.navigate('RiskDetailScreen', { risk });
   }
 
@@ -21,10 +21,11 @@ export default function RiskListScreen({ navigation }: { navigation: StackNaviga
   return (
     <View style={styles.container}>
       <ScrollView>
-        {risks.map(risk => {
-          return <Pressable key={risk.id} onPress={() => buttonClick(risk)}><RiskSummary key={risk.id} risk={risk}></RiskSummary></Pressable>
-        })
-        }
+        {risks.map(risk => (
+          <Pressable key={risk.id} onPress={() => onPressRiskSummary(risk)}>
+            <RiskSummary risk={risk} />
+          </Pressable>
+        ))}
       </ScrollView>
     </View>
   );
