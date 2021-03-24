@@ -1,11 +1,10 @@
 import React from 'react'
 import { StyleSheet } from 'react-native';
-import { RiskDetail } from '../types';
+import { RiskSummaryT } from '../types';
 import { Text, View } from './Themed';
 import RiskLevelBadge from './RiskLevelBadge';
 
-// only needs the 'level and 'label' of Risk. Useful in case we want to optimise the risk summary list screen, only fetching information when required.
-const RiskSummary = ({ risk }: { risk: Pick<RiskDetail, 'level' | 'label'> }) => {
+const RiskSummary = ({ risk }: { risk: RiskSummaryT }) => {
 
   return (
     <View style={styles.container}>
