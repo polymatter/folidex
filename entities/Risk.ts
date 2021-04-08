@@ -7,9 +7,8 @@
  */
 
 
-/** The public interface for risks.
- * 
- * Should only be created by makeRisk and should be immutable 
+/** 
+ * The public interface for risks.
  * 
 */
 export default interface Risk {
@@ -23,10 +22,8 @@ export default interface Risk {
   toJson: () => Readonly<RiskProps>;
 }
 
-/** The risk levels */
 export type RiskLevel = "Low" | "Medium" | "High";
 
-/** The properties that make up a risk.  */
 export interface RiskProps {
   id: string;
   level: RiskLevel;
@@ -37,7 +34,6 @@ export interface RiskProps {
   likelihood: string;
 }
 
-/* The risk */
 export type RiskSummaryProps = Pick<RiskProps, 'level' | 'label'>
 
 export type RiskSummary = Pick<Risk, 'getLevel' | 'getLabel'> & { toJson: () => Readonly<RiskSummaryProps> }
