@@ -20,7 +20,7 @@ export default interface Risk {
   getContingency: () => string;
   getImpact: () => string;
   getLikelihood: () => string;
-  toJson: () => RiskProps;
+  toJson: () => Readonly<RiskProps>;
 }
 
 /** The risk levels */
@@ -40,7 +40,7 @@ export interface RiskProps {
 /* The risk */
 export type RiskSummaryProps = Pick<RiskProps, 'level' | 'label'>
 
-export type RiskSummary = Pick<Risk, 'getLevel' | 'getLabel'> & { toJson: () => RiskSummaryProps }
+export type RiskSummary = Pick<Risk, 'getLevel' | 'getLabel'> & { toJson: () => Readonly<RiskSummaryProps> }
 
 export function buildMakeRisk({ }) {
   /** Responsibility for creating the only function that can create risks. arguments are dependencies to be injected in */
@@ -53,7 +53,7 @@ export function buildMakeRisk({ }) {
       getContingency: () => contingency,
       getImpact: () => impact,
       getLikelihood: () => likelihood,
-      toJson: () => ({ id, level, label, mitigation, contingency, impact, likelihood }),
+      toJson: () => Object.freeze({ id, level, label, mitigation, contingency, impact, likelihood }),
     })
   }
 }
@@ -63,7 +63,7 @@ export function buildMakeRiskSummary({ }) {
     return Object.freeze({
       getLevel: () => level,
       getLabel: () => label,
-      toJson: () => ({ level, label })
+      toJson: () => Object.freeze({ level, label })
     })
   }
 }
