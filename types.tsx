@@ -25,7 +25,7 @@ export const enum RiskLevelEnum {
 
 export type RiskLevel = keyof typeof RiskLevelEnum;
 
-export type RiskSummaryT = Pick<RiskDetail, 'level' | 'label'>
+export type RiskSummary = Pick<RiskDetail, 'level' | 'label'>
 
 export type RiskDetail = {
   id: string;

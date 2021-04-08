@@ -1,10 +1,10 @@
 import React from 'react'
 import { StyleSheet } from 'react-native';
-import { RiskSummaryT } from '../types';
+import { RiskSummary } from '../types';
 import { Text, View } from './Themed';
 import RiskLevelBadge from './RiskLevelBadge';
 
-const RiskSummary = ({ risk }: { risk: RiskSummaryT }) => {
+const RiskSummary = ({ risk }: { risk: RiskSummary }) => {
 
   return (
     <View style={styles.container}>
