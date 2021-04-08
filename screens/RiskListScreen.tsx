@@ -2,28 +2,35 @@ import * as React from 'react';
 import { StyleSheet, ScrollView, Pressable } from 'react-native';
 import { StackNavigationProp } from '@react-navigation/stack';
 
-import { RiskDetail, RiskListTabParamList } from '../types';
+import { RiskListTabParamList } from '../types';
+import Risk, { buildMakeRisk, RiskProps } from '../entities/Risk';
 import APIEndpoints from '../constants/APIEndpoints';
 import { View } from '../components/Themed';
-import RiskSummary from '../components/RiskSummary';
+import RiskSummaryItem from '../components/RiskSummaryItem';
 
 export default function RiskListScreen({ navigation }: { navigation: StackNavigationProp<RiskListTabParamList, 'RiskListScreen'> }) {
 
-  const onPressRiskSummary = (risk: RiskDetail) => {
+  const onPressRiskSummary = (risk: Risk) => {
     navigation.navigate('RiskDetailScreen', { risk });
   }
 
-  const [risks, setRisks] = React.useState([] as RiskDetail[]);
+  const [risks, setRisks] = React.useState([] as Risk[]);
   React.useEffect(() => {
-    fetch(APIEndpoints.riskDetailList).then(d => d.json() as Promise<RiskDetail[]>).then(setRisks);
+    fetch(APIEndpoints.riskDetailList)
+    .then(d => d.json() as Promise<RiskProps[]>)
+    .then(riskprops => {
+      const makeRisk = buildMakeRisk({});
+      return riskprops.map(riskProp => makeRisk(riskProp));
+    })
+    .then(setRisks);
   }, [])
 
   return (
     <View style={styles.container}>
       <ScrollView>
         {risks.map(risk => (
-          <Pressable key={risk.id} onPress={() => onPressRiskSummary(risk)}>
-            <RiskSummary risk={risk} />
+          <Pressable key={risk.getId()} onPress={() => onPressRiskSummary(risk)}>
+            <RiskSummaryItem risk={risk} />
           </Pressable>
         ))}
       </ScrollView>

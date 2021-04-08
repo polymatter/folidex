@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 import { Text } from '../components/Themed';
 import { MaterialIcons, MaterialCommunityIcons } from '@expo/vector-icons';
 import Colors from '../constants/Colors';
-import { RiskLevel } from '../types'
+import { RiskLevel } from '../entities/Risk'
 
 const HighRed = Colors.badgeLevels.High;
 const MediumYellow = Colors.badgeLevels.Medium;

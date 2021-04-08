@@ -13,10 +13,10 @@ const RiskDetailScreen = ({ route: { params: { risk } } }: { route: RouteProp<Ri
   return (
     <View>
       <View style={styles.bar}>
-        <RiskLevelBadge level={risk.level} />
+        <RiskLevelBadge level={risk.getLevel()} />
       </View>
       <View style={styles.test}>
-        <TextInput value={risk.label} multiline={true} numberOfLines={5} returnKeyLabel="done" />
+        <TextInput value={risk.getLabel()} multiline={true} numberOfLines={5} returnKeyLabel="done" />
       </View>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,1)" />
       <View style={styles.bar}>
@@ -44,21 +44,19 @@ const RiskDetailScreen = ({ route: { params: { risk } } }: { route: RouteProp<Ri
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,1)" />
       <View style={styles.section}>
         <Text style={styles.sectionOne}>Mitigation</Text>
-        <TextInput value={risk.mitigation} multiline={true} numberOfLines={5} />
+        <TextInput value={risk.getMitigation()} multiline={true} numberOfLines={5} />
       </View>
       <View style={styles.section}>
         <Text style={styles.sectionTwo}>Contingency</Text>
-        <TextInput value={risk.contingency} multiline={true} numberOfLines={5} />
+        <TextInput value={risk.getContingency()} multiline={true} numberOfLines={5} />
       </View>
       <View style={styles.section}>
         <Text style={styles.sectionThree}>Impact</Text>
-        <TextInput value={risk.impact} multiline={true} numberOfLines={5} />
+        <TextInput value={risk.getImpact()} multiline={true} numberOfLines={5} />
       </View>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,1)" />
     </View>
   )
-
-  // packstact percy (sports radar)
 }
 
 export default RiskDetailScreen

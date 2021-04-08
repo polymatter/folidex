@@ -1,16 +1,16 @@
 import React from 'react'
 import { StyleSheet } from 'react-native';
-import { RiskSummary } from '../types';
+import { RiskSummary } from '../entities/Risk';
 import { Text, View } from './Themed';
 import RiskLevelBadge from './RiskLevelBadge';
 
-const RiskSummary = ({ risk }: { risk: RiskSummary }) => {
+const RiskSummaryItem = ({ risk }: { risk: RiskSummary }) => {
 
   return (
     <View style={styles.container}>
       <Text style={styles.label}>
-        <RiskLevelBadge level={risk.level} />
-        {risk.label}
+        <RiskLevelBadge level={risk.getLevel()} />
+        {risk.getLabel()}
       </Text>
       <View style={styles.separator} lightColor="#aaa" darkColor="rgba(255,255,255,0.1)" />
     </View>
@@ -36,4 +36,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default RiskSummary
+export default RiskSummaryItem
