@@ -64,7 +64,7 @@ function RiskListNavigator() {
         name="RiskDetailScreen"
         component={RiskDetailScreen}
         options={({route}) => ({
-          headerTitle: route.params.risk.label
+          headerTitle: route.params.risk.getLabel()
         })}
         />
     </RiskListTabStack.Navigator>
