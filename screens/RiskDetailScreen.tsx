@@ -8,16 +8,25 @@ import { Ionicons } from '@expo/vector-icons';
 import { StyleSheet } from 'react-native';
 import Colors from '../constants/Colors'
 
+const doNothing = () => { }
+
 const RiskDetailScreen = ({ route: { params: { risk } } }: { route: RouteProp<RiskListTabParamList, 'RiskDetailScreen'> }) => {
 
   const [editable, setEditable] = useState(false);
   const toggleEditable = () => setEditable(previousState => !previousState);
 
+  const [label, setLabel] = useState(risk.getLabel()); // TODO: Replace with sending an ID and lookup on detail screen from a global store see https://reactnavigation.org/docs/params#what-should-be-in-params
+
   return (
     <View>
       <RiskLevelBadge level={risk.getLevel()} />
       <View style={styles.test}>
-        <TextInput value={risk.getLabel()} multiline={true} numberOfLines={5} returnKeyLabel="done" />
+        <TextInput
+          value={label}
+          onChangeText={editable ? setLabel : doNothing}
+          multiline={true}
+          numberOfLines={5}
+          returnKeyLabel="done" />
       </View>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,1)" />
       <View style={styles.bar}>
@@ -28,13 +37,13 @@ const RiskDetailScreen = ({ route: { params: { risk } } }: { route: RouteProp<Ri
         <View style={styles.bar}>
           {editable ?
             <>
-              <Ionicons name="lock-closed" size={24} color="black" />
-              <Text>Write Protected</Text>
+              <Ionicons name="lock-open" size={24} color="black" />
+              <Text>Editable</Text>
             </>
             :
             <>
-              <Ionicons name="lock-open" size={24} color="black" />
-              <Text>Editable</Text>
+              <Ionicons name="lock-closed" size={24} color="black" />
+              <Text>Write Protected</Text>
             </>
           }
 
