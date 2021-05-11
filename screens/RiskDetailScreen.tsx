@@ -1,7 +1,7 @@
 import { RouteProp } from '@react-navigation/core';
 import React from 'react'
 
-import { Text, View, Button, TextInput } from '../components/Themed';
+import { Text, View, Switch, TextInput } from '../components/Themed';
 import RiskLevelBadge from '../components/RiskLevelBadge';
 import { RiskListTabParamList } from '../types';
 import { Ionicons } from '@expo/vector-icons';
@@ -12,9 +12,7 @@ const RiskDetailScreen = ({ route: { params: { risk } } }: { route: RouteProp<Ri
 
   return (
     <View>
-      <View style={styles.bar}>
-        <RiskLevelBadge level={risk.getLevel()} />
-      </View>
+      <RiskLevelBadge level={risk.getLevel()} />
       <View style={styles.test}>
         <TextInput value={risk.getLabel()} multiline={true} numberOfLines={5} returnKeyLabel="done" />
       </View>
