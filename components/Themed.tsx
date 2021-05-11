@@ -1,5 +1,11 @@
 import * as React from 'react';
-import { Text as DefaultText, View as DefaultView, Button as DefaultButton, TextInput as DefaultTextInput } from 'react-native';
+import {
+  Text as DefaultText,
+  View as DefaultView,
+  Button as DefaultButton,
+  TextInput as DefaultTextInput,
+  Switch as DefaultSwitch
+} from 'react-native';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
@@ -41,9 +47,13 @@ export function View(props: ViewProps) {
 }
 
 export function Button(props: DefaultButton['props']) {
-  return <DefaultButton {...props}/>
+  return <DefaultButton {...props} />
 }
 
 export function TextInput(props: DefaultTextInput['props']) {
-  return <DefaultTextInput {...props}/>
+  return <DefaultTextInput {...props} />
+}
+
+export function Switch(props: DefaultSwitch['props']) {
+  return <DefaultSwitch {...props} />
 }
