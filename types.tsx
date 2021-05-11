@@ -12,7 +12,7 @@ export type BottomTabParamList = {
 
 export type RiskListTabParamList = {
   RiskListScreen: undefined;
-  RiskDetailScreen: { risk: Risk};
+  RiskDetailScreen: { risk: Risk}; // TODO: Replace with sending an ID and lookup on detail screen from a global store see https://reactnavigation.org/docs/params#what-should-be-in-params
 };
 
 export type TabTwoParamList = {
