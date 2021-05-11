@@ -1,5 +1,5 @@
 import { RouteProp } from '@react-navigation/core';
-import React from 'react'
+import React, { useState } from 'react'
 
 import { Text, View, Switch, TextInput } from '../components/Themed';
 import RiskLevelBadge from '../components/RiskLevelBadge';
@@ -9,6 +9,9 @@ import { StyleSheet } from 'react-native';
 import Colors from '../constants/Colors'
 
 const RiskDetailScreen = ({ route: { params: { risk } } }: { route: RouteProp<RiskListTabParamList, 'RiskDetailScreen'> }) => {
+
+  const [editable, setEditable] = useState(false);
+  const toggleEditable = () => setEditable(previousState => !previousState);
 
   return (
     <View>
@@ -23,8 +26,22 @@ const RiskDetailScreen = ({ route: { params: { risk } } }: { route: RouteProp<Ri
           <Text>Shared</Text>
         </View>
         <View style={styles.bar}>
-          <Ionicons name="lock-closed" size={24} color="black" />
-          <Text>Write Protected</Text>
+          {editable ?
+            <>
+              <Ionicons name="lock-closed" size={24} color="black" />
+              <Text>Write Protected</Text>
+            </>
+            :
+            <>
+              <Ionicons name="lock-open" size={24} color="black" />
+              <Text>Editable</Text>
+            </>
+          }
+
+          <Switch
+            onValueChange={toggleEditable}
+            value={editable}
+          />
         </View>
       </View>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,1)" />
