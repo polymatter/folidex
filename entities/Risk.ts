@@ -43,7 +43,7 @@ export interface BuildMakeRiskProps {
 
 export function buildMakeRisk({ }: BuildMakeRiskProps) {
   /** Responsibility for creating the only function that can create risks. arguments are dependencies to be injected in */
-  return function makeRisk({ id, level, label, mitigation, contingency, impact, likelihood }: RiskProps): Risk {
+  return function makeRisk({ id, level, label, mitigation, contingency, impact, likelihood }: RiskProps): Readonly<Risk> {
     return Object.freeze({
       getId: () => id,
       getLevel: () => level,
@@ -61,7 +61,7 @@ export interface BuildMakeRiskSummaryProps {
 }
 
 export function buildMakeRiskSummary({ }: BuildMakeRiskSummaryProps) {
-  return function makeRiskSummary({ level, label }: RiskSummaryProps): RiskSummary {
+  return function makeRiskSummary({ level, label }: RiskSummaryProps): Readonly<RiskSummary> {
     return Object.freeze({
       getLevel: () => level,
       getLabel: () => label,
@@ -74,7 +74,7 @@ export interface BuildMakeNewRiskProps extends BuildMakeRiskProps {
 }
 
 export function buildMakeNewRisk({ Id, ...others }: BuildMakeNewRiskProps) {
-  return function makeNewRisk(riskProps: Omit<RiskProps, 'id'>): Risk {
+  return function makeNewRisk(riskProps: Omit<RiskProps, 'id'>): Readonly<Risk> {
     const makeRisk = buildMakeRisk(others);
     const id = Id.generateId();
     return makeRisk({ ...riskProps, id });
