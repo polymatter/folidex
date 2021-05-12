@@ -10,6 +10,14 @@ import Colors from '../constants/Colors'
 
 const doNothing = () => { }
 
+const debounce = (func: any, timeout = 300) => {
+  let timer:NodeJS.Timeout;
+  return (...args:any[]) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => { func.apply(null, args); }, timeout);
+  };
+}
+
 const RiskDetailScreen = ({ route: { params: { risk } } }: { route: RouteProp<RiskListTabParamList, 'RiskDetailScreen'> }) => {
 
   const [editable, setEditable] = useState(false);
@@ -23,7 +31,7 @@ const RiskDetailScreen = ({ route: { params: { risk } } }: { route: RouteProp<Ri
       <View style={styles.test}>
         <TextInput
           value={label}
-          onChangeText={editable ? setLabel : doNothing}
+          onChangeText={editable ? debounce(setLabel) : doNothing}
           multiline={true}
           numberOfLines={5}
           returnKeyLabel="done" />
