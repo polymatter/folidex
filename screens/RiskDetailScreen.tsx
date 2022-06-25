@@ -7,12 +7,14 @@ import { RiskListTabParamList } from '../types';
 import { Ionicons } from '@expo/vector-icons';
 import { StyleSheet } from 'react-native';
 import Colors from '../constants/Colors'
+import { updateRiskLabel } from '../constants/APIEndpoints';
 
 const doNothing = () => { }
 
+// using homecooked debounce because I can't be bothered to find a library right now, but it would probably be overwhelming to send the update on every single keystroke. Not sure its worth making an issue out of this unless an issue becomes apparent. YAGNI (on the better 3rd party debounce)
 const debounce = (func: any, timeout = 300) => {
-  let timer:NodeJS.Timeout;
-  return (...args:any[]) => {
+  let timer: NodeJS.Timeout;
+  return (...args: any[]) => {
     clearTimeout(timer);
     timer = setTimeout(() => { func.apply(null, args); }, timeout);
   };
@@ -25,13 +27,18 @@ const RiskDetailScreen = ({ route: { params: { risk } } }: { route: RouteProp<Ri
 
   const [label, setLabel] = useState(risk.getLabel()); // TODO: Replace with sending an ID and lookup on detail screen from a global store see https://reactnavigation.org/docs/params#what-should-be-in-params
 
+  const changeLabelHandler = (label: string) => {
+    setLabel(label);
+    debounce(() => updateRiskLabel({ id: risk.getId(), label }))();
+  }
+
   return (
     <View>
       <RiskLevelBadge level={risk.getLevel()} />
       <View style={styles.test}>
         <TextInput
           value={label}
-          onChangeText={editable ? debounce(setLabel) : doNothing}
+          onChangeText={editable ? changeLabelHandler : doNothing}
           multiline={true}
           numberOfLines={5}
           returnKeyLabel="done" />
