@@ -6,8 +6,8 @@ export type RootStackParamList = {
 };
 
 export type BottomTabParamList = {
-  RiskList: undefined;
-  TabTwo: undefined;
+  'Risk List': undefined;
+  'Tab Two': undefined;
 };
 
 export type RiskListTabParamList = {

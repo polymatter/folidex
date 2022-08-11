@@ -1,6 +1,6 @@
-import { Ionicons } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { CardStyleInterpolators, createStackNavigator } from '@react-navigation/stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as React from 'react';
 
 import Colors from '../constants/Colors';
@@ -17,20 +17,24 @@ export default function BottomTabNavigator() {
 
   return (
     <BottomTab.Navigator
-      initialRouteName="RiskList"
-      tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}>
+      initialRouteName="Risk List"
+      screenOptions={{
+        tabBarActiveTintColor: Colors[colorScheme].tint,
+      }}>
       <BottomTab.Screen
-        name="RiskList"
+        name="Risk List"
         component={RiskListNavigator}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+          headerShown: false,
+          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />
       <BottomTab.Screen
-        name="TabTwo"
+        name="Tab Two"
         component={TabTwoNavigator}
         options={{
-          tabBarIcon: ({ color }) => <TabBarIcon name="ios-code" color={color} />,
+          headerShown: false,
+          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />
     </BottomTab.Navigator>
@@ -39,21 +43,18 @@ export default function BottomTabNavigator() {
 
 // You can explore the built-in icon families and icons on the web at:
 // https://icons.expo.fyi/
-function TabBarIcon(props: { name: React.ComponentProps<typeof Ionicons>['name']; color: string }) {
-  return <Ionicons size={30} style={{ marginBottom: -3 }} {...props} />;
+function TabBarIcon(props: { name: React.ComponentProps<typeof FontAwesome>['name']; color: string }) {
+  return <FontAwesome size={30} style={{ marginBottom: -3 }} {...props} />;
 }
 
 // Each tab has its own navigation stack, you can read more about this pattern here:
 // https://reactnavigation.org/docs/tab-based-navigation#a-stack-navigator-for-each-tab
-const RiskListTabStack = createStackNavigator<RiskListTabParamList>();
+const RiskListTabStack = createNativeStackNavigator<RiskListTabParamList>();
 
 function RiskListNavigator() {
   return (
     <RiskListTabStack.Navigator
       initialRouteName="RiskListScreen"
-      screenOptions={{
-        cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS
-      }}
       >
       <RiskListTabStack.Screen
         name="RiskListScreen"
@@ -71,7 +72,7 @@ function RiskListNavigator() {
   );
 }
 
-const TabTwoStack = createStackNavigator<TabTwoParamList>();
+const TabTwoStack = createNativeStackNavigator<TabTwoParamList>();
 
 function TabTwoNavigator() {
   return (
@@ -79,7 +80,7 @@ function TabTwoNavigator() {
       <TabTwoStack.Screen
         name="TabTwoScreen"
         component={TabTwoScreen}
-        options={{ headerTitle: 'Tab Two Title' }}
+        options={{ title: 'Tab Two Title'}}
       />
     </TabTwoStack.Navigator>
   );
