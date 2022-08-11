@@ -1,9 +1,11 @@
+import {API_URL} from '@env'
+
 export default {
-  riskDetailList: 'https://411uchidwl.execute-api.eu-west-2.amazonaws.com/dev/risks',
+  riskDetailList: API_URL,
 }
 
 const updateRiskLabelParams = {
-  url: 'https://411uchidwl.execute-api.eu-west-2.amazonaws.com/dev/risks',
+  url: API_URL,
   fetchOptions: {
     method: 'POST',
     headers: {

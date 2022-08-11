@@ -8,7 +8,7 @@ import useColorScheme from '../hooks/useColorScheme';
 import RiskDetailScreen from '../screens/RiskDetailScreen';
 import RiskListScreen from '../screens/RiskListScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
-import { BottomTabParamList, RiskListTabParamList, TabTwoParamList } from '../types';
+import { BottomTabParamList, RiskListTabParamList, TabTwoParamList } from '../types/navigation';
 
 const BottomTab = createBottomTabNavigator<BottomTabParamList>();
 

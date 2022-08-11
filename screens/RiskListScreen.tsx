@@ -2,7 +2,7 @@ import * as React from 'react';
 import { StyleSheet, ScrollView, Pressable } from 'react-native';
 import { StackNavigationProp } from '@react-navigation/stack';
 
-import { RiskListTabParamList } from '../types';
+import { RiskListTabParamList } from '../types/navigation';
 import Risk, { buildMakeRisk, RiskProps } from '../entities/Risk';
 import APIEndpoints from '../constants/APIEndpoints';
 import { View } from '../components/Themed';

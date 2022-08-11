@@ -1,4 +1,4 @@
-import Risk from './entities/Risk'
+import Risk from '../entities/Risk'
 
 export type RootStackParamList = {
   Root: undefined;

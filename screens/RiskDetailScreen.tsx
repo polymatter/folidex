@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 
 import { Text, View, Switch, TextInput } from '../components/Themed';
 import RiskLevelBadge from '../components/RiskLevelBadge';
-import { RiskListTabParamList } from '../types';
+import { RiskListTabParamList } from '../types/navigation';
 import { Ionicons } from '@expo/vector-icons';
 import { StyleSheet } from 'react-native';
 import Colors from '../constants/Colors'
