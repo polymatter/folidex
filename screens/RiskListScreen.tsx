@@ -16,6 +16,7 @@ export default function RiskListScreen({ navigation }: { navigation: StackNaviga
 
   const [risks, setRisks] = React.useState([] as Risk[]);
   React.useEffect(() => {
+    setRisks([]);
     getRiskDetailList()
     .then(d => d.json() as Promise<RiskProps[]>)
     .then(riskprops => {
