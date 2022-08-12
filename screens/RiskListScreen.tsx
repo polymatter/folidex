@@ -27,13 +27,15 @@ export default function RiskListScreen({ navigation }: { navigation: StackNaviga
   }, [])
 
   return (
-    <View style={styles.container}>
+    <View>
       <ScrollView>
+        <View style={styles.container}>
         {risks.map(risk => (
-          <Pressable key={risk.getId()} onPress={() => onPressRiskSummary(risk)}>
-            <RiskSummaryItem risk={risk} />
-          </Pressable>
+            <Pressable key={risk.getId()} onPress={() => onPressRiskSummary(risk)}>
+              <RiskSummaryItem risk={risk} />
+            </Pressable>
         ))}
+        </View>
       </ScrollView>
     </View>
   );
@@ -42,7 +44,6 @@ export default function RiskListScreen({ navigation }: { navigation: StackNaviga
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
     justifyContent: 'center',
   },
 });
