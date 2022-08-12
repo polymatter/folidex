@@ -11,14 +11,7 @@ import { updateRiskLabel } from '../adaptors/DataAccess';
 
 const doNothing = () => { }
 
-// using homecooked debounce because I can't be bothered to find a library right now, but it would probably be overwhelming to send the update on every single keystroke. Not sure its worth making an issue out of this unless an issue becomes apparent. YAGNI (on the better 3rd party debounce)
-const debounce = (func: any, timeout = 300) => {
-  let timer: NodeJS.Timeout;
-  return (...args: any[]) => {
-    clearTimeout(timer);
-    timer = setTimeout(() => { func.apply(null, args); }, timeout);
-  };
-}
+const debounce = require('lodash.debounce');
 
 const RiskDetailScreen = ({ route: { params: { risk } } }: { route: RouteProp<RiskListTabParamList, 'RiskDetailScreen'> }) => {
 
