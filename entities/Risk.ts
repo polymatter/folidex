@@ -44,6 +44,7 @@ export interface BuildMakeRiskProps {
 export function buildMakeRisk({ }: BuildMakeRiskProps) {
   /** Responsibility for creating the only function that can create risks. arguments are dependencies to be injected in */
   return function makeRisk({ id, level, label, mitigation, contingency, impact, likelihood }: RiskProps): Readonly<Risk> {
+    // validation of properties throwing exceptions if invalid
     return Object.freeze({
       getId: () => id,
       getLevel: () => level,
