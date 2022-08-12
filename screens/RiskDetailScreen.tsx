@@ -7,7 +7,7 @@ import { RiskListTabParamList } from '../types/navigation';
 import { Ionicons } from '@expo/vector-icons';
 import { StyleSheet } from 'react-native';
 import Colors from '../constants/Colors'
-import { updateRiskLabel } from '../constants/APIEndpoints';
+import { updateRiskLabel } from '../adaptors/DataAccess';
 
 const doNothing = () => { }
 

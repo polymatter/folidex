@@ -4,7 +4,7 @@ import { StackNavigationProp } from '@react-navigation/stack';
 
 import { RiskListTabParamList } from '../types/navigation';
 import Risk, { buildMakeRisk, RiskProps } from '../entities/Risk';
-import APIEndpoints from '../constants/APIEndpoints';
+import { getRiskDetailList } from '../adaptors/DataAccess';
 import { View } from '../components/Themed';
 import RiskSummaryItem from '../components/RiskSummaryItem';
 
@@ -16,7 +16,7 @@ export default function RiskListScreen({ navigation }: { navigation: StackNaviga
 
   const [risks, setRisks] = React.useState([] as Risk[]);
   React.useEffect(() => {
-    fetch(APIEndpoints.riskDetailList)
+    getRiskDetailList()
     .then(d => d.json() as Promise<RiskProps[]>)
     .then(riskprops => {
       const makeRisk = buildMakeRisk({});
