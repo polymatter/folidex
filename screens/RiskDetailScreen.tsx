@@ -1,9 +1,8 @@
-import { RouteProp } from '@react-navigation/core';
 import React, { useState } from 'react'
 
 import { Text, View, Switch, TextInput } from '../components/Themed';
 import RiskLevelBadge from '../components/RiskLevelBadge';
-import { RiskListTabParamList } from '../types/navigation';
+import { RootTabScreenProps } from '../types/navigation';
 import { Ionicons } from '@expo/vector-icons';
 import { StyleSheet } from 'react-native';
 import Colors from '../constants/Colors'
@@ -20,7 +19,7 @@ const debounce = (func: any, timeout = 300) => {
   };
 }
 
-const RiskDetailScreen = ({ route: { params: { risk } } }: { route: RouteProp<RiskListTabParamList, 'RiskDetailScreen'> }) => {
+const RiskDetailScreen = ({ route: { params: { risk } } } : RootTabScreenProps<'Risk Detail'>) => {
 
   const [editable, setEditable] = useState(false);
   const toggleEditable = () => setEditable(previousState => !previousState);

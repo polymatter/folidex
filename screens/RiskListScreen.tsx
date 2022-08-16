@@ -1,17 +1,16 @@
 import * as React from 'react';
 import { StyleSheet, ScrollView, Pressable } from 'react-native';
-import { StackNavigationProp } from '@react-navigation/stack';
 
-import { RiskListTabParamList } from '../types/navigation';
 import Risk, { buildMakeRisk, RiskProps } from '../entities/Risk';
 import { getRiskDetailList } from '../adaptors/DataAccess';
 import { View } from '../components/Themed';
 import RiskSummaryItem from '../components/RiskSummaryItem';
+import { RootTabScreenProps } from '../types/navigation';
 
-export default function RiskListScreen({ navigation }: { navigation: StackNavigationProp<RiskListTabParamList, 'RiskListScreen'> }) {
+export default function RiskListScreen({ navigation }: RootTabScreenProps<'Risk List'> ) {
 
   const onPressRiskSummary = (risk: Risk) => {
-    navigation.navigate('RiskDetailScreen', { risk });
+    navigation.navigate('Risk Detail', { risk });
   }
 
   const [risks, setRisks] = React.useState([] as Risk[]);

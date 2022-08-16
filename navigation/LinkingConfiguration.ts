@@ -4,23 +4,24 @@ import * as Linking from 'expo-linking';
 import { RootStackParamList } from '../types/navigation';
 
 const linking: LinkingOptions<RootStackParamList> = {
-  prefixes: [Linking.makeUrl('/')],
+  prefixes: [Linking.createURL('/')],
   config: {
     screens: {
       Root: {
         screens: {
-          RiskList: {
+          'Risk List': {
             screens: {
               RiskListScreen: 'risklist',
             },
           },
-          TabTwo: {
+          'Tab Two': {
             screens: {
               TabTwoScreen: 'two',
             },
           },
         },
       },
+      Modal: 'modal',
       NotFound: '*',
     },
   },
