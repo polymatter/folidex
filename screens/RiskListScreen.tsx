@@ -18,23 +18,23 @@ export default function RiskListScreen({ navigation }: { navigation: StackNaviga
   React.useEffect(() => {
     setRisks([]);
     getRiskDetailList()
-    .then(d => d.json() as Promise<RiskProps[]>)
-    .then(riskprops => {
-      const makeRisk = buildMakeRisk({});
-      return riskprops.map(riskProp => makeRisk(riskProp));
-    })
-    .then(setRisks);
+      .then(d => d.json() as Promise<RiskProps[]>)
+      .then(riskprops => {
+        const makeRisk = buildMakeRisk({});
+        return riskprops.map(riskProp => makeRisk(riskProp));
+      })
+      .then(setRisks);
   }, [])
 
   return (
     <View>
       <ScrollView>
         <View style={styles.container}>
-        {risks.map(risk => (
+          {risks.map(risk => (
             <Pressable key={risk.getId()} onPress={() => onPressRiskSummary(risk)}>
               <RiskSummaryItem risk={risk} />
             </Pressable>
-        ))}
+          ))}
         </View>
       </ScrollView>
     </View>

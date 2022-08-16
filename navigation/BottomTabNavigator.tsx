@@ -55,7 +55,7 @@ function RiskListNavigator() {
   return (
     <RiskListTabStack.Navigator
       initialRouteName="RiskListScreen"
-      >
+    >
       <RiskListTabStack.Screen
         name="RiskListScreen"
         component={RiskListScreen}
@@ -64,10 +64,10 @@ function RiskListNavigator() {
       <RiskListTabStack.Screen
         name="RiskDetailScreen"
         component={RiskDetailScreen}
-        options={({route}) => ({
+        options={({ route }) => ({
           headerTitle: route.params.risk.getLabel()
         })}
-        />
+      />
     </RiskListTabStack.Navigator>
   );
 }
@@ -80,7 +80,7 @@ function TabTwoNavigator() {
       <TabTwoStack.Screen
         name="TabTwoScreen"
         component={TabTwoScreen}
-        options={{ title: 'Tab Two Title'}}
+        options={{ title: 'Tab Two Title' }}
       />
     </TabTwoStack.Navigator>
   );
