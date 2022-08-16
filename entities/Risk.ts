@@ -12,19 +12,6 @@
  * 
 */
 export default interface Risk {
-  getId: () => string;
-  getLevel: () => RiskLevel;
-  getLabel: () => string;
-  getMitigation: () => string;
-  getContingency: () => string;
-  getImpact: () => string;
-  getLikelihood: () => string;
-  toJson: () => Readonly<RiskProps>;
-}
-
-export type RiskLevel = "Low" | "Medium" | "High";
-
-export interface RiskProps {
   id: string;
   level: RiskLevel;
   label: string;
@@ -34,26 +21,19 @@ export interface RiskProps {
   likelihood: string;
 }
 
-export type RiskSummaryProps = Pick<RiskProps, 'level' | 'label'>
+export type RiskLevel = "Low" | "Medium" | "High";
 
-export type RiskSummary = Pick<Risk, 'getLevel' | 'getLabel'> & { toJson: () => Readonly<RiskSummaryProps> }
+export type RiskSummary = Pick<Risk, 'level' | 'label'>
 
 export interface BuildMakeRiskProps {
 }
 
 export function buildMakeRisk({ }: BuildMakeRiskProps) {
   /** Responsibility for creating the only function that can create risks. arguments are dependencies to be injected in */
-  return function makeRisk({ id, level, label, mitigation, contingency, impact, likelihood }: RiskProps): Readonly<Risk> {
+  return function makeRisk({ id, level, label, mitigation, contingency, impact, likelihood }: Risk): Readonly<Risk> {
     // validation of properties throwing exceptions if invalid
     return Object.freeze({
-      getId: () => id,
-      getLevel: () => level,
-      getLabel: () => label,
-      getMitigation: () => mitigation,
-      getContingency: () => contingency,
-      getImpact: () => impact,
-      getLikelihood: () => likelihood,
-      toJson: () => Object.freeze({ id, level, label, mitigation, contingency, impact, likelihood }),
+      id, level, label, mitigation, contingency, impact, likelihood 
     })
   }
 }
@@ -62,11 +42,9 @@ export interface BuildMakeRiskSummaryProps {
 }
 
 export function buildMakeRiskSummary({ }: BuildMakeRiskSummaryProps) {
-  return function makeRiskSummary({ level, label }: RiskSummaryProps): Readonly<RiskSummary> {
+  return function makeRiskSummary({ level, label }: RiskSummary): Readonly<RiskSummary> {
     return Object.freeze({
-      getLevel: () => level,
-      getLabel: () => label,
-      toJson: () => Object.freeze({ level, label })
+      level, label
     })
   }
 }
@@ -75,7 +53,7 @@ export interface BuildMakeNewRiskProps extends BuildMakeRiskProps {
 }
 
 export function buildMakeNewRisk({ Id, ...others }: BuildMakeNewRiskProps) {
-  return function makeNewRisk(riskProps: Omit<RiskProps, 'id'>): Readonly<Risk> {
+  return function makeNewRisk(riskProps: Omit<Risk, 'id'>): Readonly<Risk> {
     const makeRisk = buildMakeRisk(others);
     const id = Id.generateId();
     return makeRisk({ ...riskProps, id });

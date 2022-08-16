@@ -9,8 +9,8 @@ const RiskSummaryItem = ({ risk }: { risk: RiskSummary }) => {
   return (
     <View style={styles.container}>
       <Text style={styles.label}>
-        <RiskLevelBadge level={risk.getLevel()} />
-        {risk.getLabel()}
+        <RiskLevelBadge level={risk.level} />
+        {risk.label}
       </Text>
       <View style={styles.separator} lightColor="#aaa" darkColor="rgba(255,255,255,0.1)" />
     </View>

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { StyleSheet, ScrollView, Pressable } from 'react-native';
 
-import Risk, { buildMakeRisk, RiskProps } from '../entities/Risk';
+import Risk, { buildMakeRisk } from '../entities/Risk';
 import { getRiskDetailList } from '../adaptors/DataAccess';
 import { View } from '../components/Themed';
 import RiskSummaryItem from '../components/RiskSummaryItem';
@@ -17,7 +17,7 @@ export default function RiskListScreen({ navigation }: RootTabScreenProps<'Risk 
   React.useEffect(() => {
     setRisks([]);
     getRiskDetailList()
-      .then(d => d.json() as Promise<RiskProps[]>)
+      .then(d => d.json() as Promise<Risk[]>)
       .then(riskprops => {
         const makeRisk = buildMakeRisk({});
         return riskprops.map(riskProp => makeRisk(riskProp));
@@ -30,7 +30,7 @@ export default function RiskListScreen({ navigation }: RootTabScreenProps<'Risk 
       <ScrollView>
         <View style={styles.container}>
           {risks.map(risk => (
-            <Pressable key={risk.getId()} onPress={() => onPressRiskSummary(risk)}>
+            <Pressable key={risk.id} onPress={() => onPressRiskSummary(risk)}>
               <RiskSummaryItem risk={risk} />
             </Pressable>
           ))}

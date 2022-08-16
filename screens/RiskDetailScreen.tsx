@@ -24,16 +24,16 @@ const RiskDetailScreen = ({ route: { params: { risk } } } : RootTabScreenProps<'
   const [editable, setEditable] = useState(false);
   const toggleEditable = () => setEditable(previousState => !previousState);
 
-  const [label, setLabel] = useState(risk.getLabel()); // TODO: Replace with sending an ID and lookup on detail screen from a global store see https://reactnavigation.org/docs/params#what-should-be-in-params
+  const [label, setLabel] = useState(risk.label); // TODO: Replace with sending an ID and lookup on detail screen from a global store see https://reactnavigation.org/docs/params#what-should-be-in-params
 
   const changeLabelHandler = (label: string) => {
     setLabel(label);
-    debounce(() => updateRiskLabel({ id: risk.getId(), label }))();
+    debounce(() => updateRiskLabel({ id: risk.id, label }))();
   }
 
   return (
     <View>
-      <RiskLevelBadge level={risk.getLevel()} />
+      <RiskLevelBadge level={risk.level} />
       <View style={styles.test}>
         <TextInput
           value={label}
@@ -82,15 +82,15 @@ const RiskDetailScreen = ({ route: { params: { risk } } } : RootTabScreenProps<'
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,1)" />
       <View style={styles.section}>
         <Text style={styles.sectionOne}>Mitigation</Text>
-        <TextInput value={risk.getMitigation()} multiline={true} numberOfLines={5} />
+        <TextInput value={risk.mitigation} multiline={true} numberOfLines={5} />
       </View>
       <View style={styles.section}>
         <Text style={styles.sectionTwo}>Contingency</Text>
-        <TextInput value={risk.getContingency()} multiline={true} numberOfLines={5} />
+        <TextInput value={risk.contingency} multiline={true} numberOfLines={5} />
       </View>
       <View style={styles.section}>
         <Text style={styles.sectionThree}>Impact</Text>
-        <TextInput value={risk.getImpact()} multiline={true} numberOfLines={5} />
+        <TextInput value={risk.impact} multiline={true} numberOfLines={5} />
       </View>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,1)" />
     </View>
