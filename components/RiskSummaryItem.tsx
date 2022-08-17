@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { StyleSheet } from 'react-native';
-import { RiskSummary } from '../entities/Risk';
+import Risk from '../entities/Risk';
 import { Text, View } from './Themed';
 import RiskLevelBadge from './RiskLevelBadge';
+import RiskStoreContext from '../store/RiskStore';
 
-const RiskSummaryItem = ({ risk }: { risk: RiskSummary }) => {
+const RiskSummaryItem = ({ riskId }: { riskId: string }) => {
+
+  const risk : Risk | undefined = useContext(RiskStoreContext).filter(r => r.id == riskId)?.pop();
+  if (risk == undefined) {
+    return <Text>Could not find risk with id "{riskId}"</Text>
+  }
 
   return (
     <View style={styles.container}>

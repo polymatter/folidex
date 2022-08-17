@@ -10,18 +10,18 @@ import RiskStoreContext from '../store/RiskStore';
 export default function RiskListScreen({ navigation }: RootTabScreenProps<'Risk List'> ) {
 
   const onPressRiskSummary = (risk: Risk) => {
-    navigation.navigate('Risk Detail', { risk });
+    navigation.navigate('Risk Detail', { riskId : risk.id });
   }
 
   const risks = React.useContext(RiskStoreContext);
-  
+
   return (
     <View>
       <ScrollView>
         <View style={styles.container}>
           {risks.map(risk => (
             <Pressable key={risk.id} onPress={() => onPressRiskSummary(risk)}>
-              <RiskSummaryItem risk={risk} />
+              <RiskSummaryItem riskId={risk.id} />
             </Pressable>
           ))}
         </View>

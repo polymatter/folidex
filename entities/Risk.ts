@@ -23,8 +23,6 @@ export default interface Risk {
 
 export type RiskLevel = "Low" | "Medium" | "High";
 
-export type RiskSummary = Pick<Risk, 'level' | 'label'>
-
 export interface BuildMakeRiskProps {
 }
 
@@ -34,17 +32,6 @@ export function buildMakeRisk({ }: BuildMakeRiskProps) {
     // validation of properties throwing exceptions if invalid
     return Object.freeze({
       id, level, label, mitigation, contingency, impact, likelihood 
-    })
-  }
-}
-
-export interface BuildMakeRiskSummaryProps {
-}
-
-export function buildMakeRiskSummary({ }: BuildMakeRiskSummaryProps) {
-  return function makeRiskSummary({ level, label }: RiskSummary): Readonly<RiskSummary> {
-    return Object.freeze({
-      level, label
     })
   }
 }

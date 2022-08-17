@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 
 import { Text, View, Switch, TextInput } from '../components/Themed';
 import RiskLevelBadge from '../components/RiskLevelBadge';
@@ -7,8 +7,10 @@ import { Ionicons } from '@expo/vector-icons';
 import { StyleSheet } from 'react-native';
 import Colors from '../constants/Colors'
 import { updateRiskLabel } from '../adaptors/DataAccess';
-
-const doNothing = () => { }
+import Risk from '../entities/Risk';
+import RiskStoreContext from '../store/RiskStore';
+  
+const doNothing = () => {  }
 
 // using homecooked debounce because I can't be bothered to find a library right now, but it would probably be overwhelming to send the update on every single keystroke. Not sure its worth making an issue out of this unless an issue becomes apparent. YAGNI (on the better 3rd party debounce)
 const debounce = (func: any, timeout = 300) => {
@@ -19,15 +21,18 @@ const debounce = (func: any, timeout = 300) => {
   };
 }
 
-const RiskDetailScreen = ({ route: { params: { risk } } } : RootTabScreenProps<'Risk Detail'>) => {
+const RiskDetailScreen = ({ route: { params: { riskId } } } : RootTabScreenProps<'Risk Detail'>) => {
 
   const [editable, setEditable] = useState(false);
   const toggleEditable = () => setEditable(previousState => !previousState);
+  
+  const risk : Risk = useContext(RiskStoreContext).filter(r => r.id == riskId)[0]
 
-  const [label, setLabel] = useState(risk.label); // TODO: Replace with sending an ID and lookup on detail screen from a global store see https://reactnavigation.org/docs/params#what-should-be-in-params
+  if (risk === undefined) {
+    return <Text>Undefined</Text>
+  }
 
   const changeLabelHandler = (label: string) => {
-    setLabel(label);
     debounce(() => updateRiskLabel({ id: risk.id, label }))();
   }
 
@@ -36,7 +41,7 @@ const RiskDetailScreen = ({ route: { params: { risk } } } : RootTabScreenProps<'
       <RiskLevelBadge level={risk.level} />
       <View style={styles.test}>
         <TextInput
-          value={label}
+          value={risk.label}
           onChangeText={editable ? changeLabelHandler : doNothing}
           multiline={true}
           numberOfLines={5}
