@@ -1,11 +1,11 @@
 import * as React from 'react';
 import { StyleSheet, ScrollView, Pressable } from 'react-native';
 
-import Risk, { buildMakeRisk } from '../entities/Risk';
-import { getRiskDetailList } from '../adaptors/DataAccess';
+import Risk from '../entities/Risk';
 import { View } from '../components/Themed';
 import RiskSummaryItem from '../components/RiskSummaryItem';
 import { RootTabScreenProps } from '../types/navigation';
+import RiskStoreContext from '../store/RiskStore';
 
 export default function RiskListScreen({ navigation }: RootTabScreenProps<'Risk List'> ) {
 
@@ -13,18 +13,8 @@ export default function RiskListScreen({ navigation }: RootTabScreenProps<'Risk 
     navigation.navigate('Risk Detail', { risk });
   }
 
-  const [risks, setRisks] = React.useState([] as Risk[]);
-  React.useEffect(() => {
-    setRisks([]);
-    getRiskDetailList()
-      .then(d => d.json() as Promise<Risk[]>)
-      .then(riskprops => {
-        const makeRisk = buildMakeRisk({});
-        return riskprops.map(riskProp => makeRisk(riskProp));
-      })
-      .then(setRisks);
-  }, [])
-
+  const risks = React.useContext(RiskStoreContext);
+  
   return (
     <View>
       <ScrollView>
