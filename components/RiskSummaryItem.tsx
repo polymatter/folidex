@@ -7,7 +7,7 @@ import RiskStoreContext from '../store/RiskStore';
 
 const RiskSummaryItem = ({ riskId }: { riskId: string }) => {
 
-  const risk : Risk | undefined = useContext(RiskStoreContext).filter(r => r.id == riskId)?.pop();
+  const risk: Risk | undefined = useContext(RiskStoreContext).filter(r => r.id == riskId)?.pop();
   if (risk == undefined) {
     return <Text>Could not find risk with id "{riskId}"</Text>
   }

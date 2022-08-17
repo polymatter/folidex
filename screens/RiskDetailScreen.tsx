@@ -9,8 +9,8 @@ import Colors from '../constants/Colors'
 import { updateRiskLabel } from '../adaptors/DataAccess';
 import Risk from '../entities/Risk';
 import RiskStoreContext from '../store/RiskStore';
-  
-const doNothing = () => {  }
+
+const doNothing = () => { }
 
 // using homecooked debounce because I can't be bothered to find a library right now, but it would probably be overwhelming to send the update on every single keystroke. Not sure its worth making an issue out of this unless an issue becomes apparent. YAGNI (on the better 3rd party debounce)
 const debounce = (func: any, timeout = 300) => {
@@ -21,12 +21,12 @@ const debounce = (func: any, timeout = 300) => {
   };
 }
 
-const RiskDetailScreen = ({ route: { params: { riskId } } } : RootTabScreenProps<'Risk Detail'>) => {
+const RiskDetailScreen = ({ route: { params: { riskId } } }: RootTabScreenProps<'Risk Detail'>) => {
 
   const [editable, setEditable] = useState(false);
   const toggleEditable = () => setEditable(previousState => !previousState);
-  
-  const risk : Risk = useContext(RiskStoreContext).filter(r => r.id == riskId)[0]
+
+  const risk: Risk = useContext(RiskStoreContext).filter(r => r.id == riskId)[0]
 
   if (risk === undefined) {
     return <Text>Undefined</Text>

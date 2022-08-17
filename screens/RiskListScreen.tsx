@@ -7,10 +7,10 @@ import RiskSummaryItem from '../components/RiskSummaryItem';
 import { RootTabScreenProps } from '../types/navigation';
 import RiskStoreContext from '../store/RiskStore';
 
-export default function RiskListScreen({ navigation }: RootTabScreenProps<'Risk List'> ) {
+export default function RiskListScreen({ navigation }: RootTabScreenProps<'Risk List'>) {
 
   const onPressRiskSummary = (risk: Risk) => {
-    navigation.navigate('Risk Detail', { riskId : risk.id });
+    navigation.navigate('Risk Detail', { riskId: risk.id });
   }
 
   const risks = React.useContext(RiskStoreContext);

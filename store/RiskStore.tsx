@@ -4,7 +4,7 @@ import Risk, { buildMakeRisk } from "../entities/Risk";
 
 const RiskStoreContext = React.createContext<Risk[]>([] as Risk[])
 
-export function RiskStore({ children } : { children: React.ReactNode }) {
+export function RiskStore({ children }: { children: React.ReactNode }) {
   const [riskStore, setRiskStore] = useState<Risk[]>([] as Risk[])
 
   React.useEffect(() => {
