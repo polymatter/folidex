@@ -16,15 +16,13 @@ export default function RiskListScreen({ navigation }: RootTabScreenProps<'Risk 
   const risks = React.useContext(RiskStoreContext);
 
   return (
-    <View>
+    <View style={styles.container}>
       <ScrollView>
-        <View style={styles.container}>
-          {risks.map(risk => (
-            <Pressable key={risk.id} onPress={() => onPressRiskSummary(risk)}>
-              <RiskSummaryItem riskId={risk.id} />
-            </Pressable>
-          ))}
-        </View>
+        {risks.map(risk => (
+          <Pressable key={risk.id} onPress={() => onPressRiskSummary(risk)}>
+            <RiskSummaryItem riskId={risk.id} />
+          </Pressable>
+        ))}
       </ScrollView>
     </View>
   );
@@ -33,6 +31,7 @@ export default function RiskListScreen({ navigation }: RootTabScreenProps<'Risk 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    alignItems: 'center',
     justifyContent: 'center',
   },
 });

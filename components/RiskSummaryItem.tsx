@@ -25,8 +25,7 @@ const RiskSummaryItem = ({ riskId }: { riskId: string }) => {
 
 const styles = StyleSheet.create({
   label: {
-    display: 'flex',
-    flexGrow: 10
+
   },
   container: {
     flex: 1,
