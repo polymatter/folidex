@@ -1,6 +1,5 @@
 import { FontAwesome } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as React from 'react';
 
 import Colors from '../constants/Colors';
