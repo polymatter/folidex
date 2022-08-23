@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RiskSummaryItem> can render a risk item 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#fff",
+      },
+      Object {
+        "flex": 1,
+      },
+    ]
+  }
+>
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#000",
+        },
+        Object {},
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#fff",
+          },
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "lineHeight": 10,
+            "minHeight": 30,
+            "paddingLeft": 5,
+            "paddingRight": 5,
+          },
+        ]
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#000",
+            },
+            Array [
+              Object {
+                "borderRadius": 15,
+                "display": "flex",
+                "flexShrink": 0,
+                "fontSize": 12,
+                "marginRight": 30,
+                "paddingLeft": 8,
+                "paddingRight": 8,
+              },
+              Object {
+                "color": "#dc3545",
+              },
+            ],
+          ]
+        }
+      >
+        High
+      </Text>
+    </View>
+    The server capacity initially defined may be inadequate
+  </Text>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#aaa",
+        },
+        Object {
+          "height": 1,
+          "marginVertical": 10,
+          "width": "90%",
+        },
+      ]
+    }
+  />
+</View>
+`;
