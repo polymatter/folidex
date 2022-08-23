@@ -1,7 +1,7 @@
 import { Ionicons } from "@expo/vector-icons";
 import React, { useState, useContext } from "react";
 import { Text, View, Switch, TextInput } from '../components/Themed';
-import { Colors } from "react-native/Libraries/NewAppScreen";
+import Colors from "../constants/Colors";
 import { updateRiskLabel } from "../adaptors/DataAccess";
 import Risk from "../entities/Risk";
 import RiskStoreContext from "../store/RiskStore";
