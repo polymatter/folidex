@@ -35,7 +35,7 @@ const RiskDetail = ({ riskId, showIcon = true }: { riskId: string, showIcon?: bo
 
   return (
     <View>
-      <RiskLevelBadge level={risk.level} />
+      <RiskLevelBadge level={risk.level} showIcon={showIcon} />
       <View style={styles.test}>
         <TextInput
           value={risk.label}

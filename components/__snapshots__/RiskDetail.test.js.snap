@@ -1,0 +1,460 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RiskDetail> can render a risk item 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#fff",
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#fff",
+        },
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "flexDirection": "row",
+          "lineHeight": 10,
+          "minHeight": 30,
+          "paddingLeft": 5,
+          "paddingRight": 5,
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#000",
+          },
+          Array [
+            Object {
+              "borderRadius": 15,
+              "display": "flex",
+              "flexShrink": 0,
+              "fontSize": 12,
+              "marginRight": 30,
+              "paddingLeft": 8,
+              "paddingRight": 8,
+            },
+            Object {
+              "color": "#dc3545",
+            },
+          ],
+        ]
+      }
+    >
+      High
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#fff",
+        },
+        Object {
+          "paddingLeft": 30,
+        },
+      ]
+    }
+  >
+    <TextInput
+      multiline={true}
+      numberOfLines={5}
+      onChangeText={[Function]}
+      returnKeyLabel="done"
+      value="The server capacity initially defined may be inadequate"
+    />
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#eee",
+        },
+        Object {
+          "height": 10,
+          "width": "100%",
+        },
+      ]
+    }
+  />
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#fff",
+        },
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "flexDirection": "row",
+          "lineHeight": 10,
+          "minHeight": 30,
+          "paddingLeft": 5,
+          "paddingRight": 5,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#fff",
+          },
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "lineHeight": 10,
+            "minHeight": 30,
+            "paddingLeft": 5,
+            "paddingRight": 5,
+          },
+        ]
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#000",
+            },
+            undefined,
+          ]
+        }
+      >
+        Shared
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#fff",
+          },
+          Object {
+            "alignItems": "center",
+            "flex": 1,
+            "flexDirection": "row",
+            "lineHeight": 10,
+            "minHeight": 30,
+            "paddingLeft": 5,
+            "paddingRight": 5,
+          },
+        ]
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#000",
+            },
+            undefined,
+          ]
+        }
+      >
+        Write Protected
+      </Text>
+      <RCTSwitch
+        accessibilityRole="switch"
+        onChange={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
+        style={
+          Object {
+            "height": 31,
+            "width": 51,
+          }
+        }
+        value={false}
+      />
+    </View>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#eee",
+        },
+        Object {
+          "height": 10,
+          "width": "100%",
+        },
+      ]
+    }
+  />
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#fff",
+        },
+        Object {
+          "alignItems": "center",
+          "flex": 1,
+          "flexDirection": "row",
+          "lineHeight": 10,
+          "minHeight": 30,
+          "paddingLeft": 5,
+          "paddingRight": 5,
+        },
+      ]
+    }
+  >
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#fff",
+          },
+          Array [
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+              "flexDirection": "row",
+              "lineHeight": 10,
+              "minHeight": 30,
+              "paddingLeft": 5,
+              "paddingRight": 5,
+            },
+            Object {
+              "backgroundColor": "#DEB789",
+              "borderRadius": 20,
+              "paddingLeft": 15,
+            },
+          ],
+        ]
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#000",
+            },
+            undefined,
+          ]
+        }
+      >
+        Mitigation
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#fff",
+          },
+          Array [
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+              "flexDirection": "row",
+              "lineHeight": 10,
+              "minHeight": 30,
+              "paddingLeft": 5,
+              "paddingRight": 5,
+            },
+            Object {
+              "backgroundColor": "#AFC09D",
+              "borderRadius": 20,
+              "paddingLeft": 15,
+            },
+          ],
+        ]
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#000",
+            },
+            undefined,
+          ]
+        }
+      >
+        Contingency
+      </Text>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#fff",
+          },
+          Array [
+            Object {
+              "alignItems": "center",
+              "flex": 1,
+              "flexDirection": "row",
+              "lineHeight": 10,
+              "minHeight": 30,
+              "paddingLeft": 5,
+              "paddingRight": 5,
+            },
+            Object {
+              "backgroundColor": "#DEB789",
+              "borderRadius": 20,
+              "paddingLeft": 15,
+            },
+          ],
+        ]
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#000",
+            },
+            undefined,
+          ]
+        }
+      >
+        Impact
+      </Text>
+    </View>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#eee",
+        },
+        Object {
+          "height": 10,
+          "width": "100%",
+        },
+      ]
+    }
+  />
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#fff",
+        },
+        Object {
+          "padding": 10,
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#000",
+          },
+          Object {
+            "backgroundColor": "#DEB789",
+            "borderRadius": 20,
+            "paddingLeft": 15,
+          },
+        ]
+      }
+    >
+      Mitigation
+    </Text>
+    <TextInput
+      multiline={true}
+      numberOfLines={5}
+      value="Capacity analysis will be done during the design stage, if this shows a problem design issues will be revisited"
+    />
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#fff",
+        },
+        Object {
+          "padding": 10,
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#000",
+          },
+          Object {
+            "backgroundColor": "#AFC09D",
+            "borderRadius": 20,
+            "paddingLeft": 15,
+          },
+        ]
+      }
+    >
+      Contingency
+    </Text>
+    <TextInput
+      multiline={true}
+      numberOfLines={5}
+      value="Purchase and install additional disc space at the customer site"
+    />
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#fff",
+        },
+        Object {
+          "padding": 10,
+        },
+      ]
+    }
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#000",
+          },
+          Object {
+            "backgroundColor": "#DEB789",
+            "borderRadius": 20,
+            "paddingLeft": 15,
+          },
+        ]
+      }
+    >
+      Impact
+    </Text>
+    <TextInput
+      multiline={true}
+      numberOfLines={5}
+      value="Cost of disc space plus installation effort &amp; travel"
+    />
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#eee",
+        },
+        Object {
+          "height": 10,
+          "width": "100%",
+        },
+      ]
+    }
+  />
+</View>
+`;
