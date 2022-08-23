@@ -5,7 +5,7 @@ import { Text, View } from './Themed';
 import RiskLevelBadge from './RiskLevelBadge';
 import RiskStoreContext from '../store/RiskStore';
 
-const RiskSummaryItem = ({ showIcon = true, riskId }: {showIcon : boolean, riskId: string }) => {
+const RiskSummaryItem = ({ showIcon = true, riskId }: {showIcon? : boolean, riskId: string }) => {
 
   const risk: Risk | undefined = useContext(RiskStoreContext).filter(r => r.id == riskId)?.pop();
   if (risk == undefined) {
