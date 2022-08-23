@@ -33,7 +33,7 @@ const RiskDetailScreen = ({ route: { params: { riskId } } }: RootTabScreenProps<
   }
 
   const changeLabelHandler = (label: string) => {
-    debounce(() => updateRiskLabel({ id: risk.id, label }))();
+    debounce(updateRiskLabel)({ id: risk.id, label});
   }
 
   return (
