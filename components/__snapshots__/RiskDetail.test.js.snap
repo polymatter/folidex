@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<RiskDetail> can render a risk item 1`] = `
+exports[`<RiskDetail> can render a risk detail 1`] = `
 <View
   style={
     Array [
