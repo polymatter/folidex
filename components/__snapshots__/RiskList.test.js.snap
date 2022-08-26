@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<RiskList> can render a risk list 1`] = `
+exports[`<RiskList> can render a risk list and be able to select a risk item 1`] = `
 <View
   style={
     Array [
