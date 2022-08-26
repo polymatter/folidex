@@ -5,8 +5,8 @@ import RiskList from '../components/RiskList';
 
 export default function RiskListScreen({ navigation }: RootTabScreenProps<'Risk List'>) {
 
-  const onPressRiskSummary = (risk: Risk) => {
-    navigation.navigate('Risk Detail', { riskId: risk.id });
+  const onPressRiskSummary = (riskId: string) => {
+    navigation.navigate('Risk Detail', { riskId });
   }
 
   return (

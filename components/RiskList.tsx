@@ -6,7 +6,7 @@ import { View } from '../components/Themed';
 import RiskSummaryItem from '../components/RiskSummaryItem';
 import RiskStoreContext from '../store/RiskStore';
 
-export default function RiskList({ onPressRiskSummary, showIcon = true }: { onPressRiskSummary: (risk: Risk) => void, showIcon?: boolean }) {
+export default function RiskList({ onPressRiskSummary, showIcon = true }: { onPressRiskSummary: (riskId: string) => void, showIcon?: boolean }) {
 
   const risks = React.useContext(RiskStoreContext);
 
@@ -14,7 +14,7 @@ export default function RiskList({ onPressRiskSummary, showIcon = true }: { onPr
     <View style={styles.container}>
       <ScrollView>
         {risks.map(risk => (
-          <Pressable key={risk.id} onPress={() => onPressRiskSummary(risk)}>
+          <Pressable key={risk.id} onPress={() => onPressRiskSummary(risk.id)}>
             <RiskSummaryItem riskId={risk.id} showIcon={showIcon} />
           </Pressable>
         ))}

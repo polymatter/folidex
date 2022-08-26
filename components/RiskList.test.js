@@ -17,7 +17,11 @@ describe('<RiskList>', () => {
 
     expect(tree).toMatchSnapshot();
 
-    fireEvent.press(screen.getByText(mockdata[2].label));
+    const testItem = 2;
+    fireEvent.press(screen.getByText(mockdata[testItem].label));
     expect(mockNavigation).toBeCalled();
+    const firstInvocation = 0;
+    const firstArgument = 0;
+    expect(mockNavigation.mock.calls[firstInvocation][firstArgument]).toBe(mockdata[testItem].id);
   })
 })
