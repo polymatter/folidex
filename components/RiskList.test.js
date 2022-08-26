@@ -4,6 +4,27 @@ import RiskStoreContext from '../store/RiskStore';
 import mockdata from '../mocks/RiskStore.json';
 import RiskList from './RiskList';
 
+jest.mock('@expo/vector-icons', () => ({
+  AntDesign: 'Icon',
+  Entypo: 'Icon',
+  EvilIcons: 'Icon',
+  Feather: 'Icon',
+  Fontisto: 'Icon',
+  FontAwesome: 'Icon',
+  FontAwesome5: 'Icon',
+  Foundation: 'Icon',
+  Ionicons: 'Icon',
+  MaterialCommunityIcons: 'Icon',
+  MaterialIcons: 'Icon',
+  Octicons: 'Icon',
+  SimpleLineIcons: 'Icon',
+  Zocial: 'Icon',
+  createMultiStyleIconSet: 'Icon',
+  createIconSet: 'Icon',
+  createIconSetFromFontello: 'Icon',
+  createIconSetFromIcoMoon: 'Icon',
+  createMu: 'Icon'
+}));
 describe('<RiskList>', () => {
 
   test('can render a risk list and be able to select a risk item', () => {
@@ -11,7 +32,7 @@ describe('<RiskList>', () => {
     const mockNavigation = jest.fn();
     const tree = render(
       <RiskStoreContext.Provider value={mockdata}>
-        <RiskList onPressRiskSummary={mockNavigation} showIcon={false} />
+        <RiskList onPressRiskSummary={mockNavigation} />
       </RiskStoreContext.Provider>
     ).toJSON();
 

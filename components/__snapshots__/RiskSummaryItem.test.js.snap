@@ -41,6 +41,11 @@ exports[`<RiskSummaryItem> can render a risk item 1`] = `
         ]
       }
     >
+      <Icon
+        color="#dc3545"
+        name="dangerous"
+        size={24}
+      />
       <Text
         style={
           Array [

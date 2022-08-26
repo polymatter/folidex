@@ -1,12 +1,11 @@
 import * as React from 'react';
 import { StyleSheet, ScrollView, Pressable } from 'react-native';
 
-import Risk from '../entities/Risk';
 import { View } from '../components/Themed';
 import RiskSummaryItem from '../components/RiskSummaryItem';
 import RiskStoreContext from '../store/RiskStore';
 
-export default function RiskList({ onPressRiskSummary, showIcon = true }: { onPressRiskSummary: (riskId: string) => void, showIcon?: boolean }) {
+export default function RiskList({ onPressRiskSummary }: { onPressRiskSummary: (riskId: string) => void }) {
 
   const risks = React.useContext(RiskStoreContext);
 
@@ -15,7 +14,7 @@ export default function RiskList({ onPressRiskSummary, showIcon = true }: { onPr
       <ScrollView>
         {risks.map(risk => (
           <Pressable key={risk.id} onPress={() => onPressRiskSummary(risk.id)}>
-            <RiskSummaryItem riskId={risk.id} showIcon={showIcon} />
+            <RiskSummaryItem riskId={risk.id} />
           </Pressable>
         ))}
       </ScrollView>

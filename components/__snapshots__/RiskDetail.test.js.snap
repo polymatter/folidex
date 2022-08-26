@@ -29,6 +29,11 @@ exports[`<RiskDetail> can render a risk detail 1`] = `
       ]
     }
   >
+    <Icon
+      color="#dc3545"
+      name="dangerous"
+      size={24}
+    />
     <Text
       style={
         Array [
@@ -124,6 +129,11 @@ exports[`<RiskDetail> can render a risk detail 1`] = `
         ]
       }
     >
+      <Icon
+        color="black"
+        name="people"
+        size={24}
+      />
       <Text
         style={
           Array [
@@ -155,6 +165,11 @@ exports[`<RiskDetail> can render a risk detail 1`] = `
         ]
       }
     >
+      <Icon
+        color="black"
+        name="lock-closed"
+        size={24}
+      />
       <Text
         style={
           Array [

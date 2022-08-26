@@ -71,6 +71,11 @@ exports[`<RiskList> can render a risk list and be able to select a risk item 1`]
                 ]
               }
             >
+              <Icon
+                color="#dc3545"
+                name="dangerous"
+                size={24}
+              />
               <Text
                 style={
                   Array [
@@ -169,6 +174,11 @@ exports[`<RiskList> can render a risk list and be able to select a risk item 1`]
                 ]
               }
             >
+              <Icon
+                color="#efa73c"
+                name="warning"
+                size={24}
+              />
               <Text
                 style={
                   Array [
@@ -267,6 +277,11 @@ exports[`<RiskList> can render a risk list and be able to select a risk item 1`]
                 ]
               }
             >
+              <Icon
+                color="#29c338"
+                name="emoticon-happy-outline"
+                size={24}
+              />
               <Text
                 style={
                   Array [
@@ -365,6 +380,11 @@ exports[`<RiskList> can render a risk list and be able to select a risk item 1`]
                 ]
               }
             >
+              <Icon
+                color="#29c338"
+                name="emoticon-happy-outline"
+                size={24}
+              />
               <Text
                 style={
                   Array [
@@ -463,6 +483,11 @@ exports[`<RiskList> can render a risk list and be able to select a risk item 1`]
                 ]
               }
             >
+              <Icon
+                color="#29c338"
+                name="emoticon-happy-outline"
+                size={24}
+              />
               <Text
                 style={
                   Array [
@@ -561,6 +586,11 @@ exports[`<RiskList> can render a risk list and be able to select a risk item 1`]
                 ]
               }
             >
+              <Icon
+                color="#29c338"
+                name="emoticon-happy-outline"
+                size={24}
+              />
               <Text
                 style={
                   Array [
@@ -659,6 +689,11 @@ exports[`<RiskList> can render a risk list and be able to select a risk item 1`]
                 ]
               }
             >
+              <Icon
+                color="#29c338"
+                name="emoticon-happy-outline"
+                size={24}
+              />
               <Text
                 style={
                   Array [
@@ -759,6 +794,11 @@ Hello
                 ]
               }
             >
+              <Icon
+                color="#29c338"
+                name="emoticon-happy-outline"
+                size={24}
+              />
               <Text
                 style={
                   Array [
@@ -857,6 +897,11 @@ Hello
                 ]
               }
             >
+              <Icon
+                color="#29c338"
+                name="emoticon-happy-outline"
+                size={24}
+              />
               <Text
                 style={
                   Array [
@@ -955,6 +1000,11 @@ Hello
                 ]
               }
             >
+              <Icon
+                color="#29c338"
+                name="emoticon-happy-outline"
+                size={24}
+              />
               <Text
                 style={
                   Array [
@@ -1053,6 +1103,11 @@ Hello
                 ]
               }
             >
+              <Icon
+                color="#29c338"
+                name="emoticon-happy-outline"
+                size={24}
+              />
               <Text
                 style={
                   Array [
@@ -1153,6 +1208,11 @@ Hello
                 ]
               }
             >
+              <Icon
+                color="#29c338"
+                name="emoticon-happy-outline"
+                size={24}
+              />
               <Text
                 style={
                   Array [
@@ -1251,6 +1311,11 @@ Hello
                 ]
               }
             >
+              <Icon
+                color="#29c338"
+                name="emoticon-happy-outline"
+                size={24}
+              />
               <Text
                 style={
                   Array [
@@ -1349,6 +1414,11 @@ Hello
                 ]
               }
             >
+              <Icon
+                color="#29c338"
+                name="emoticon-happy-outline"
+                size={24}
+              />
               <Text
                 style={
                   Array [
@@ -1448,6 +1518,11 @@ Hello
                 ]
               }
             >
+              <Icon
+                color="#29c338"
+                name="emoticon-happy-outline"
+                size={24}
+              />
               <Text
                 style={
                   Array [
@@ -1546,6 +1621,11 @@ Hello
                 ]
               }
             >
+              <Icon
+                color="#29c338"
+                name="emoticon-happy-outline"
+                size={24}
+              />
               <Text
                 style={
                   Array [
@@ -1646,6 +1726,11 @@ Hello
                 ]
               }
             >
+              <Icon
+                color="#29c338"
+                name="emoticon-happy-outline"
+                size={24}
+              />
               <Text
                 style={
                   Array [
@@ -1746,6 +1831,11 @@ Hello
                 ]
               }
             >
+              <Icon
+                color="#29c338"
+                name="emoticon-happy-outline"
+                size={24}
+              />
               <Text
                 style={
                   Array [
@@ -1844,6 +1934,11 @@ Hello
                 ]
               }
             >
+              <Icon
+                color="#29c338"
+                name="emoticon-happy-outline"
+                size={24}
+              />
               <Text
                 style={
                   Array [
@@ -1942,6 +2037,11 @@ Hello
                 ]
               }
             >
+              <Icon
+                color="#29c338"
+                name="emoticon-happy-outline"
+                size={24}
+              />
               <Text
                 style={
                   Array [
@@ -2041,6 +2141,11 @@ Hello
                 ]
               }
             >
+              <Icon
+                color="#29c338"
+                name="emoticon-happy-outline"
+                size={24}
+              />
               <Text
                 style={
                   Array [
@@ -2141,6 +2246,11 @@ Hello
                 ]
               }
             >
+              <Icon
+                color="#29c338"
+                name="emoticon-happy-outline"
+                size={24}
+              />
               <Text
                 style={
                   Array [
@@ -2239,6 +2349,11 @@ Hello
                 ]
               }
             >
+              <Icon
+                color="#29c338"
+                name="emoticon-happy-outline"
+                size={24}
+              />
               <Text
                 style={
                   Array [
@@ -2337,6 +2452,11 @@ Hello
                 ]
               }
             >
+              <Icon
+                color="#29c338"
+                name="emoticon-happy-outline"
+                size={24}
+              />
               <Text
                 style={
                   Array [
@@ -2435,6 +2555,11 @@ Hello
                 ]
               }
             >
+              <Icon
+                color="#29c338"
+                name="emoticon-happy-outline"
+                size={24}
+              />
               <Text
                 style={
                   Array [
@@ -2533,6 +2658,11 @@ Hello
                 ]
               }
             >
+              <Icon
+                color="#29c338"
+                name="emoticon-happy-outline"
+                size={24}
+              />
               <Text
                 style={
                   Array [
@@ -2632,6 +2762,11 @@ Hello
                 ]
               }
             >
+              <Icon
+                color="#29c338"
+                name="emoticon-happy-outline"
+                size={24}
+              />
               <Text
                 style={
                   Array [
@@ -2730,6 +2865,11 @@ Hello
                 ]
               }
             >
+              <Icon
+                color="#29c338"
+                name="emoticon-happy-outline"
+                size={24}
+              />
               <Text
                 style={
                   Array [
@@ -2828,6 +2968,11 @@ Hello
                 ]
               }
             >
+              <Icon
+                color="#29c338"
+                name="emoticon-happy-outline"
+                size={24}
+              />
               <Text
                 style={
                   Array [
@@ -2926,6 +3071,11 @@ Hello
                 ]
               }
             >
+              <Icon
+                color="#29c338"
+                name="emoticon-happy-outline"
+                size={24}
+              />
               <Text
                 style={
                   Array [
@@ -3024,6 +3174,11 @@ Hello
                 ]
               }
             >
+              <Icon
+                color="#29c338"
+                name="emoticon-happy-outline"
+                size={24}
+              />
               <Text
                 style={
                   Array [
@@ -3122,6 +3277,11 @@ Hello
                 ]
               }
             >
+              <Icon
+                color="#29c338"
+                name="emoticon-happy-outline"
+                size={24}
+              />
               <Text
                 style={
                   Array [
@@ -3220,6 +3380,11 @@ Hello
                 ]
               }
             >
+              <Icon
+                color="#29c338"
+                name="emoticon-happy-outline"
+                size={24}
+              />
               <Text
                 style={
                   Array [
@@ -3318,6 +3483,11 @@ Hello
                 ]
               }
             >
+              <Icon
+                color="#29c338"
+                name="emoticon-happy-outline"
+                size={24}
+              />
               <Text
                 style={
                   Array [
@@ -3416,6 +3586,11 @@ Hello
                 ]
               }
             >
+              <Icon
+                color="#29c338"
+                name="emoticon-happy-outline"
+                size={24}
+              />
               <Text
                 style={
                   Array [
@@ -3514,6 +3689,11 @@ Hello
                 ]
               }
             >
+              <Icon
+                color="#29c338"
+                name="emoticon-happy-outline"
+                size={24}
+              />
               <Text
                 style={
                   Array [
@@ -3612,6 +3792,11 @@ Hello
                 ]
               }
             >
+              <Icon
+                color="#29c338"
+                name="emoticon-happy-outline"
+                size={24}
+              />
               <Text
                 style={
                   Array [
@@ -3712,6 +3897,11 @@ Hello
                 ]
               }
             >
+              <Icon
+                color="#29c338"
+                name="emoticon-happy-outline"
+                size={24}
+              />
               <Text
                 style={
                   Array [
@@ -3812,6 +4002,11 @@ Hello
                 ]
               }
             >
+              <Icon
+                color="#29c338"
+                name="emoticon-happy-outline"
+                size={24}
+              />
               <Text
                 style={
                   Array [
@@ -3910,6 +4105,11 @@ Hello
                 ]
               }
             >
+              <Icon
+                color="#29c338"
+                name="emoticon-happy-outline"
+                size={24}
+              />
               <Text
                 style={
                   Array [

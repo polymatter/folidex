@@ -18,7 +18,7 @@ const debounce = (func: any, timeout = 300) => {
   };
 }
 
-const RiskDetail = ({ riskId, showIcon = true }: { riskId: string, showIcon?: boolean }) => {
+const RiskDetail = ({ riskId }: { riskId: string }) => {
 
   const [editable, setEditable] = useState(false);
   const toggleEditable = () => setEditable(previousState => !previousState);
@@ -35,7 +35,7 @@ const RiskDetail = ({ riskId, showIcon = true }: { riskId: string, showIcon?: bo
 
   return (
     <View>
-      <RiskLevelBadge level={risk.level} showIcon={showIcon} />
+      <RiskLevelBadge level={risk.level} />
       <View style={styles.test}>
         <TextInput
           value={risk.label}
@@ -47,18 +47,18 @@ const RiskDetail = ({ riskId, showIcon = true }: { riskId: string, showIcon?: bo
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,1)" />
       <View style={styles.bar}>
         <View style={styles.bar}>
-          {showIcon && <Ionicons name="people" size={24} color="black" />}
+          <Ionicons name="people" size={24} color="black" />
           <Text>Shared</Text>
         </View>
         <View style={styles.bar}>
           {editable ?
             <>
-              {showIcon && <Ionicons name="lock-open" size={24} color="black" />}
+              <Ionicons name="lock-open" size={24} color="black" />
               <Text>Editable</Text>
             </>
             :
             <>
-              {showIcon && <Ionicons name="lock-closed" size={24} color="black" />}
+              <Ionicons name="lock-closed" size={24} color="black" />
               <Text>Write Protected</Text>
             </>
           }
