@@ -1,0 +1,157 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RiskLevelBadge> can render a high risk badge 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#fff",
+      },
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "flexDirection": "row",
+        "lineHeight": 10,
+        "minHeight": 30,
+        "paddingLeft": 5,
+        "paddingRight": 5,
+      },
+    ]
+  }
+>
+  <Icon
+    color="#dc3545"
+    name="dangerous"
+    size={24}
+  />
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#000",
+        },
+        Array [
+          Object {
+            "borderRadius": 15,
+            "display": "flex",
+            "flexShrink": 0,
+            "fontSize": 12,
+            "marginRight": 30,
+            "paddingLeft": 8,
+            "paddingRight": 8,
+          },
+          Object {
+            "color": "#dc3545",
+          },
+        ],
+      ]
+    }
+  >
+    High
+  </Text>
+</View>
+`;
+
+exports[`<RiskLevelBadge> can render a low risk badge 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#fff",
+      },
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "flexDirection": "row",
+        "lineHeight": 10,
+        "minHeight": 30,
+        "paddingLeft": 5,
+        "paddingRight": 5,
+      },
+    ]
+  }
+>
+  <Icon
+    color="#29c338"
+    name="emoticon-happy-outline"
+    size={24}
+  />
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#000",
+        },
+        Array [
+          Object {
+            "borderRadius": 15,
+            "display": "flex",
+            "flexShrink": 0,
+            "fontSize": 12,
+            "marginRight": 30,
+            "paddingLeft": 8,
+            "paddingRight": 8,
+          },
+          Object {
+            "color": "#29c338",
+          },
+        ],
+      ]
+    }
+  >
+    Low
+  </Text>
+</View>
+`;
+
+exports[`<RiskLevelBadge> can render a medium risk badge 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "#fff",
+      },
+      Object {
+        "alignItems": "center",
+        "flex": 1,
+        "flexDirection": "row",
+        "lineHeight": 10,
+        "minHeight": 30,
+        "paddingLeft": 5,
+        "paddingRight": 5,
+      },
+    ]
+  }
+>
+  <Icon
+    color="#efa73c"
+    name="warning"
+    size={24}
+  />
+  <Text
+    style={
+      Array [
+        Object {
+          "color": "#000",
+        },
+        Array [
+          Object {
+            "borderRadius": 15,
+            "display": "flex",
+            "flexShrink": 0,
+            "fontSize": 12,
+            "marginRight": 30,
+            "paddingLeft": 8,
+            "paddingRight": 8,
+          },
+          Object {
+            "color": "#efa73c",
+          },
+        ],
+      ]
+    }
+  >
+    Medium
+  </Text>
+</View>
+`;
