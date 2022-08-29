@@ -12,7 +12,8 @@
     "preset": "jest-expo",
     "setupFilesAfterEnv": [
       "@testing-library/jest-native/extend-expect"
-    ]
+    ],
+    "testEnvironment": "jsdom"
   },
   "dependencies": {
     "@expo/vector-icons": "^13.0.0",
