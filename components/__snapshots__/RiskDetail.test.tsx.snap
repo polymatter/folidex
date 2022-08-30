@@ -73,6 +73,7 @@ exports[`<RiskDetail> can render a risk detail 1`] = `
     }
   >
     <TextInput
+      accessibilityLabel="Label"
       multiline={true}
       numberOfLines={5}
       onChangeText={[Function]}
@@ -385,6 +386,7 @@ exports[`<RiskDetail> can render a risk detail 1`] = `
       Mitigation
     </Text>
     <TextInput
+      accessibilityLabel="Mitigation"
       multiline={true}
       numberOfLines={5}
       value="Capacity analysis will be done during the design stage, if this shows a problem design issues will be revisited"
@@ -419,6 +421,7 @@ exports[`<RiskDetail> can render a risk detail 1`] = `
       Contingency
     </Text>
     <TextInput
+      accessibilityLabel="Contingency"
       multiline={true}
       numberOfLines={5}
       value="Purchase and install additional disc space at the customer site"
@@ -453,6 +456,7 @@ exports[`<RiskDetail> can render a risk detail 1`] = `
       Impact
     </Text>
     <TextInput
+      accessibilityLabel="Impact"
       multiline={true}
       numberOfLines={5}
       value="Cost of disc space plus installation effort &amp; travel"

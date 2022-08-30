@@ -38,6 +38,7 @@ const RiskDetail = ({ riskId }: { riskId: string }) => {
       <RiskLevelBadge level={risk.level} />
       <View style={styles.test}>
         <TextInput
+          accessibilityLabel="Label"
           value={risk.label}
           onChangeText={editable ? changeLabelHandler : doNothing}
           multiline={true}
@@ -84,15 +85,15 @@ const RiskDetail = ({ riskId }: { riskId: string }) => {
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,1)" />
       <View style={styles.section}>
         <Text style={styles.sectionOne}>Mitigation</Text>
-        <TextInput value={risk.mitigation} multiline={true} numberOfLines={5} />
+        <TextInput accessibilityLabel="Mitigation" value={risk.mitigation} multiline={true} numberOfLines={5} />
       </View>
       <View style={styles.section}>
         <Text style={styles.sectionTwo}>Contingency</Text>
-        <TextInput value={risk.contingency} multiline={true} numberOfLines={5} />
+        <TextInput accessibilityLabel="Contingency" value={risk.contingency} multiline={true} numberOfLines={5} />
       </View>
       <View style={styles.section}>
         <Text style={styles.sectionThree}>Impact</Text>
-        <TextInput value={risk.impact} multiline={true} numberOfLines={5} />
+        <TextInput accessibilityLabel="Impact" value={risk.impact} multiline={true} numberOfLines={5} />
       </View>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,1)" />
     </View>
