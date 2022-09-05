@@ -4,6 +4,7 @@ import * as React from 'react';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
+import HomeScreen from '../screens/HomeScreen';
 import RiskDetailScreen from '../screens/RiskDetailScreen';
 import RiskListScreen from '../screens/RiskListScreen';
 import TabTwoScreen from '../screens/TabTwoScreen';
@@ -16,10 +17,18 @@ export default function BottomTabNavigator() {
 
   return (
     <BottomTab.Navigator
-      initialRouteName="Risk List"
+      initialRouteName="Home"
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme].tint,
       }}>
+      <BottomTab.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({ color }) => <TabBarIcon name="home" color={color} />,
+        }}
+      />
       <BottomTab.Screen
         name="Risk List"
         component={RiskListScreen}
